@@ -13,6 +13,7 @@ java {
 
 repositories {
 	mavenCentral()
+//	maven { url "https://clojars.org/repo/" }
 }
 
 dependencies {
@@ -23,6 +24,12 @@ dependencies {
 	}*/
 
 	//implementation 'org.springframework.boot:spring-boot-starter-jetty'
+
+	//Spring JDBC 자동구성 개발 - DataSource 자동 구성 클래스
+	implementation('org.springframework:spring-jdbc')
+	runtimeOnly('com.h2database:h2:2.1.214')
+	implementation('com.zaxxer:HikariCP:4.0.3') //hikari 설치
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
