@@ -2,14 +2,12 @@ package tobyspring.helloboot;
 
 
 import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.annotation.Profile;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
-import tobyspring.config.MySpringBootApplication;
 
-@MySpringBootApplication
-public class HellobootApplication implements InitializingBean {
+@SpringBootApplication
+public class HellobootApplication {
 	private final JdbcTemplate jdbcTemplate;
 
 	public HellobootApplication(JdbcTemplate jdbcTemplate) {
@@ -25,8 +23,4 @@ public class HellobootApplication implements InitializingBean {
 		SpringApplication.run(HellobootApplication.class, args);
 	}
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-
-	}
 }
